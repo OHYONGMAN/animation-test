@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      @keyframes face {
+        from {
+          transform: scale(0.8);
+        }
+
+        to {
+          transform: scale(1.5) rotate(1turn);
+        }
+      }
+
+      @keyframes head1 {
+        from {
+          transform: rotate(-10deg);
+        }
+
+        to {
+          transform: rotate(10deg);
+        }
+      }
+
+      @keyframes head {
+        from {
+          transform:  rotate(90deg);
+        }
+
+        to {
+          transform:  rotate(95deg);
+        }
+      }
+
+      @keyframes eye {
+        form {
+          transform: scale(0.8);
+        }
+        to {
+          transform: scale(1.2);
+        }
+      }
+
+      @keyframes mouse {
+        from {
+          transform: scale(0.6);
+        }
+        to {
+          transform: scale(1.2);
+        }
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: cornflowerblue;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      .crt {
+        position: relative;
+        top: 100px;
+        margin: auto;
+        width: 500px;
+        height: 500px;
+        animation: face 3s infinite alternate;
+      }
+
+      .crt > .face {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: #f68c02;
+        border: 10px solid black;
+        border-radius: 50%;
+        bottom: 0;
+      }
+
+      .crt > .face > .left-eye {
+        position: absolute;
+        top: 170px;
+        left: 60px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #321200;
+        animation: eye 0.5s infinite alternate;
+      }
+
+      .crt > .face > .left-eye > .left-eye-white {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: white;
+        
+      }
+
+      .crt > .face > .right-eye {
+        position: absolute;
+        top: 170px;
+        right: 60px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #321200;
+        animation: eye 0.5s infinite alternate;
+      }
+
+      .crt > .face > .right-eye > .right-eye-white {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: white;
+      }
+
+      .crt > .face > .mouse {
+        position: absolute;
+        top: 250px;
+        left: 150px;
+        width: 80px;
+        height: 50px;
+        border-radius: 0 0 40px 40px;
+        background-color: #754601;
+        animation: mouse 1s infinite alternate;
+      }
+
+      .crt > .face > .left-flushing {
+        position: absolute;
+        top: 220px;
+        left: 60px;
+        width: 60px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #e23b10;
+      }
+
+      .crt > .face > .right-flushing {
+        position: absolute;
+        top: 220px;
+        right: 60px;
+        width: 60px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #e23b10;
+      }
+
+      .crt > .head {
+        position: absolute;
+        top: 60px;
+        left: 200px;
+        width: 130px;
+        height: 80px;
+        border: 10px solid #000;
+        border-radius: 50%;
+        background: #40a001;
+        z-index: 1;
+        transform: rotate(-20deg);
+        animation: head1 1s infinite alternate;
+      }
+      .crt > .head2 {
+        position: absolute;
+        top: 80px;
+        left: 155px;
+        width: 100px;
+        height: 30px;
+        background-color: #331e0e;
+        border: 5px solid #000;
+        border-radius: 30%;
+        transform: rotate(90deg);
+        z-index: 2;
+        border-radius: 50% 0 0 20%;
+        animation: head 1s infinite alternate;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="crt">
+      <div class="head"></div>
+      <div class="head2"></div>
+
+      <div class="face">
+        <div class="left-eye">
+          <div class="left-eye-white"></div>
+        </div>
+        <div class="right-eye">
+          <div class="right-eye-white"></div>
+        </div>
+        <div class="mouse"></div>
+        <div class="left-flushing"></div>
+        <div class="right-flushing"></div>
+      </div>
+    </div>
+  </body>
+</html>
